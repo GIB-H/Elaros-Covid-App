@@ -7,13 +7,13 @@ import Data from "../screens/data";
 // The top of the stack is shown by default.
 const screens = {
     Home: {
-        screen: Home,
+        screen: Home, // defines which screen is linked
         navigationOptions: {
-            title: "Long-COVID Tracker",
+            title: "Long-COVID Tracker", // defines the name shown in the header
         },
     },
     Data: {
-        screen: Data,
+        screen: Data, 
         navigationOptions: {
             title: "Patient Data",  
         }, 
@@ -21,6 +21,7 @@ const screens = {
 }
 
 const HomeStack = createStackNavigator(screens, {
+    // customizes some of the default options for a page that will be used unless explicitly coded to be different
     defaultNavigationOptions: {
         headerTintColor: "#444",
         headerStyle: {

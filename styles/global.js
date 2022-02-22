@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
 
+
+// by importing globalStyles, these styles can be used anywhere.
+// this acts almost as a CSS file
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
@@ -18,9 +21,6 @@ export const globalStyles = StyleSheet.create({
 });
 
 // Useful colours:
-
 // Elaros Banner: faaf41
-
 // Elaros Dark Orange: ea531a
-
 // Elaros Light Yellow: ffc340

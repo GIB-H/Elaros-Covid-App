@@ -6,8 +6,10 @@ import Navigator from "./routes/homeStack"; // required to use Stack Navigation
 
 // Function to get the fonts from ./assets/fonts
 const getFonts = () => Font.loadAsync({
-    'Ubuntu-Regular':require('./assets/fonts/Ubuntu-Regular.ttf'),
-    'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf')
+    "IBMPlexSerif-Regular":require("./assets/fonts/IBMPlexSerif-Regular.ttf"),
+    "IBMPlexSerif-Bold":require("./assets/fonts/IBMPlexSerif-Bold.ttf"),
+    //'Ubuntu-Regular':require('./assets/fonts/Ubuntu-Regular.ttf'),
+    //'Ubuntu-Bold': require('./assets/fonts/Ubuntu-Bold.ttf')
   });
 
 

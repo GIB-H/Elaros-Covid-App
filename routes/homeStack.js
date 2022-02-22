@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import Home from "../screens/home";
-import Review from "../screens/review";
+import Data from "../screens/data";
 
 // Configures screens to be passed into createStackNavigator.
 // The top of the stack is shown by default.
@@ -9,8 +9,8 @@ const screens = {
     Home: {
         screen: Home
     },
-    Review: {
-        screen: Review
+    Data: {
+        screen: Data
     }, 
 }
 

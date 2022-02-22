@@ -6,7 +6,7 @@ export const globalStyles = StyleSheet.create({
         padding: 20,
     },
     titleText: {
-        fontFamily: "Ubuntu-Bold",
+        fontFamily: "IBMPlexSerif-Bold",
         fontSize: 18,
         color: "#333",
 

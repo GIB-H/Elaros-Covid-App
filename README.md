@@ -2,9 +2,7 @@
 
 **Version 1.0.0**
 
-A readme for the Long Covid App created by students at Sheffield Hallam University in association with Elaros. The mobile application was developed using React Native (and by extension Node.js), allowing it to run on Android and IOS devices.
-
----
+A readme for the Long Covid App created by students at Sheffield Hallam University in association with Elaros. The mobile application was developed using React Native (and by extension Node.js), allowing it to run on Android and IOS devices. This readme needs to be completed.
 
 ## Contributers
 
@@ -12,6 +10,7 @@ A readme for the Long Covid App created by students at Sheffield Hallam Universi
 - Isaac Bowyer: <c00007135@my.shu.ac.uk>
 - Dominic Backhouse: <b9019847@my.shu.ac.uk>
 - Richard William Atkinson <richardatkinson10000@gmail.com>
+
 ---
 
 ## License & Copyright

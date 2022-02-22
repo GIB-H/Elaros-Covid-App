@@ -5,7 +5,7 @@ import { globalStyles } from "../styles/global";
 export default function Review({ navigation }) {
 
     const pressHandler = () => {
-        navigation.goBack();
+        navigation.goBack(); // pops the screen off the nav stack
     }
 
     return(

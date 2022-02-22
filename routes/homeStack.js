@@ -1,5 +1,5 @@
 import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainter } from "react-navigation";
+import { createAppContainer } from "react-navigation";
 import Home from "../screens/home";
 import Review from "../screens/review";
 
@@ -7,7 +7,7 @@ import Review from "../screens/review";
 // The top of the stack is shown by default.
 const screens = {
     Home: {
-        screen: Home,
+        screen: Home
     },
     Review: {
         screen: Review
@@ -17,4 +17,4 @@ const screens = {
 const HomeStack = createStackNavigator(screens);
 
 // Returns a component that can be rendered to App.js.
-export default createAppContainter(HomeStack);
+export default createAppContainer(HomeStack);

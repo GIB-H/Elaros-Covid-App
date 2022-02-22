@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import * as Font from 'expo-font' // used for custom fonts
 import Home from './screens/home';
 import AppLoading from 'expo-app-loading'; // needed to check if the app has loaded
+import Navigator from "./routes/homeStack"; // required to use Stack Navigation
 
 // Function to get the fonts from ./assets/fonts
 const getFonts = () => Font.loadAsync({
@@ -17,7 +18,7 @@ export default function App() {
   // if~else check to ensure that fonts are loaded before loading anything
   if(fontsLoaded){
     return (
-      <Home />
+      <Navigator />
     );
   } else {
     return ( // loads the fonts if they aren't loaded yet

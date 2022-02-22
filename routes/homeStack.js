@@ -11,7 +11,7 @@ const screens = {
     },
     Review: {
         screen: Review
-    },
+    }, 
 }
 
 const HomeStack = createStackNavigator(screens);

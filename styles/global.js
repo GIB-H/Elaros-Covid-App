@@ -16,3 +16,11 @@ export const globalStyles = StyleSheet.create({
         lineHeight: 20,
     }
 });
+
+// Useful colours:
+
+// Elaros Banner: faaf41
+
+// Elaros Dark Orange: ea531a
+
+// Elaros Light Yellow: ffc340

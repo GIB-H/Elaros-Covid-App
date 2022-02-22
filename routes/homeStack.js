@@ -7,14 +7,27 @@ import Data from "../screens/data";
 // The top of the stack is shown by default.
 const screens = {
     Home: {
-        screen: Home
+        screen: Home,
+        navigationOptions: {
+            title: "Long-COVID Tracker",
+        },
     },
     Data: {
-        screen: Data
-    }, 
+        screen: Data,
+        navigationOptions: {
+            title: "Patient Data",  
+        }, 
+    },
 }
 
-const HomeStack = createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens, {
+    defaultNavigationOptions: {
+        headerTintColor: "#444",
+        headerStyle: {
+            backgroundColor: "#faaf41", 
+            height: 60}
+    }
+});
 
 // Returns a component that can be rendered to App.js.
 export default createAppContainer(HomeStack);

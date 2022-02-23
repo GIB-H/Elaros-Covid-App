@@ -47,7 +47,6 @@ function Login(props) {
               </View>
               <View style={styles.usernameColumnFiller}></View>
               <TouchableOpacity
-                onPress={() => props.navigation.navigate("Channels")}
                 style={styles.button}
               >
                 <Text style={styles.text2}>Log in</Text>
@@ -57,7 +56,6 @@ function Login(props) {
           <View style={styles.elarosColumnFiller}></View>
           <View style={styles.footerTexts}>
             <TouchableOpacity
-              onPress={() => props.navigation.navigate("SignUp")}
               style={styles.button2}
             >
               <View style={styles.createAccountFiller}></View>

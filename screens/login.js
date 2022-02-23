@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-function Home(props) {
+function Login(props) {
   return(
   <View style={styles.container}>
-    <Text>HOMESCREEN</Text>
+    <Text>THIS IS A LOGIN PAGE</Text>
   </View>
   );
 }
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+export default Login;

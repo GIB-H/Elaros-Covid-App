@@ -1,3 +1,5 @@
+// health.js is the page used to let users see an abstraction of their data.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

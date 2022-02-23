@@ -1,3 +1,5 @@
+// global.js is a global style sheet that can be imported to get styles.
+
 import { StyleSheet } from "react-native";
 
 

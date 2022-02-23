@@ -1,3 +1,5 @@
+// signUp.js is the page users use to make an account for the application.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

@@ -1,3 +1,5 @@
+// home.js is the main page users see when they log into the application.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

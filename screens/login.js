@@ -1,3 +1,5 @@
+// login.js is the page users use to log into the application
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

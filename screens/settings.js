@@ -1,3 +1,5 @@
+// settings.js is the page users use to interact with the setttings and log out of the application.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

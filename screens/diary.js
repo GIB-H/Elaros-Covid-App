@@ -1,3 +1,5 @@
+// diary.js is the page used to allow users to type into their fatigue diary
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

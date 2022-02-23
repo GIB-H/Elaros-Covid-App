@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
+// pages needed for navigation components
 import HomeScreen from "../screens/home";
 import GoalsScreen from "../screens/goals";
 import CreateGoalsScreen from "../screens/createGoals";
@@ -11,9 +12,11 @@ import HealthScreen from "../screens/health";
 import DiaryScreen from "../screens/diary";
 import LoginScreen from "../screens/login";
 import SignUpScreen from "../screens/signUp";
+import QuestionScreen from "../screens/questionnaire";
 
 const Stack = createStackNavigator();
 
+// creates the login stack so that users don't see the nav bar unless they are logged in
 function LoginStack() {
     return(
         <Stack.Navigator>
@@ -61,14 +64,14 @@ function HealthStackScreen() {
             }}
         >
             <Stack.Screen name="Your Health" component={HealthScreen} />
-            <Stack.Screen name="Diary" component={DiaryScreen}/>
+            <Stack.Screen name="Diary" component={DiaryScreen} />
+            <Stack.Screen name="Questionnaires" component={QuestionScreen} />
         </Stack.Navigator>
     );
 }
 
+// Creates the tab bar
 const Tab = createBottomTabNavigator();
-
-
 
 const Tabs = () => {
     return(
@@ -176,6 +179,8 @@ const styles = StyleSheet.create({
         elevation: 5,
     }
 });
+
+// sends Tabs or LoginStack to App.js
 
 // export default LoginStack;
 export default Tabs;

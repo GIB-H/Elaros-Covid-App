@@ -1,3 +1,5 @@
+// goals.js is the page used to let users see the goals they have set themselves and their progress.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

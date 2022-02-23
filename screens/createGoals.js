@@ -1,3 +1,5 @@
+// createGoals.js  is the page used to let users create goals in the application.
+
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 

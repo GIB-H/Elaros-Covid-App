@@ -1,19 +1,81 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
-
+import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../screens/home";
 import GoalsScreen from "../screens/goals";
+import CreateGoalsScreen from "../screens/createGoals";
 import SettingsScreen from "../screens/settings";
 import HealthScreen from "../screens/health";
+import DiaryScreen from "../screens/diary";
+import LoginScreen from "../screens/login";
+import SignUpScreen from "../screens/signUp";
+
+const Stack = createStackNavigator();
+
+function LoginStack() {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Sign Up" component={SignUpScreen} />
+            <Stack.Screen name="Home" component={Tabs} />
+        </Stack.Navigator>
+    );
+}
+
+// Creates the Goal Screen stack
+function GoalsStackScreen() {
+    return(
+        <Stack.Navigator
+            screenOptions={{
+                "headerTitleAlign": "center",
+                "headerStyle": [{
+                    "backgroundColor": "#ea531a",
+                }],
+                "headerTitleStyle": [{
+                    "color": "#fff"
+                }],
+            
+            }}
+        >
+            <Stack.Screen name="Your Goals" component={GoalsScreen} />
+            <Stack.Screen name="Create Goals" component={CreateGoalsScreen}/>
+        </Stack.Navigator>
+    );
+}
+
+// Creates the Health Screen Stack
+function HealthStackScreen() {
+    return(
+        <Stack.Navigator
+            screenOptions={{
+                "headerTitleAlign": "center",
+                "headerStyle": [{
+                    "backgroundColor": "#ea531a",
+                }],
+                "headerTitleStyle": [{
+                    "color": "#fff"
+                }],
+            
+            }}
+        >
+            <Stack.Screen name="Your Health" component={HealthScreen} />
+            <Stack.Screen name="Diary" component={DiaryScreen}/>
+        </Stack.Navigator>
+    );
+}
 
 const Tab = createBottomTabNavigator();
 
+
+
 const Tabs = () => {
     return(
+        // home bar style
         <Tab.Navigator
             screenOptions={{
+                "headerShown": false, // Hides the header so there are no duplicat headers when in goals
                 "tabBarShowLabel": false,
                 "tabBarStyle": [{
                     "position": "absolute",
@@ -24,10 +86,12 @@ const Tabs = () => {
                     "backgroundColor": "#ea531a",
                     "borderRadius": 15,
                     "height": 60,
-                    ... styles.shadow
+                    ... styles.shadow // adds shadow
                 },
                 null]}}
         >
+
+            {/* home button */}
             <Tab.Screen name="Home" component={HomeScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: "center", justifyContent: "center", top: 0}}>
@@ -43,7 +107,9 @@ const Tabs = () => {
                     </View>
                 ),
             }}/>
-            <Tab.Screen name="Health" component={HealthScreen} options={{
+
+            {/* health button */}
+            <Tab.Screen name="Health" component={HealthStackScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: "center", justifyContent: "center", top: 0}}>
                         <Image 
@@ -58,7 +124,10 @@ const Tabs = () => {
                     </View>
                 ),
             }}/>
-            <Tab.Screen name="Goals" component={GoalsScreen} options={{
+
+            {/* goals button */}
+            {/* places the GoalsStack into the goals button */}
+            <Tab.Screen name="Goals" component={GoalsStackScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: "center", justifyContent: "center", top: 0}}>
                         <Image 
@@ -73,6 +142,8 @@ const Tabs = () => {
                     </View>
                 ),
             }}/>
+
+            {/* settings button */}
             <Tab.Screen name="Settings" component={SettingsScreen} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: "center", justifyContent: "center", top: 0}}>
@@ -92,6 +163,7 @@ const Tabs = () => {
     );
 }
 
+// adds shadow behind tab bar at the bottom
 const styles = StyleSheet.create({
     shadow: {
         shadowColor: "#000",
@@ -105,4 +177,5 @@ const styles = StyleSheet.create({
     }
 });
 
+// export default LoginStack;
 export default Tabs;

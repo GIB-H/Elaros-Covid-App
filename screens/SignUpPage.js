@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useNavigation } from '@react-navigation/core'
 import {
   StyleSheet,
   View,
@@ -10,7 +11,15 @@ import {
 } from "react-native";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 
-function SignUp(props) {
+const SignUp = () => {
+
+  const navigation = useNavigation()
+
+  const handleCreateAccount = () => {
+        navigation.replace("Login")
+  }
+
+
   return (
     <View style={styles.root}>
       <StatusBar backgroundColor="#f8e11b" />

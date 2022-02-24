@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useNavigation } from '@react-navigation/core'
 import {
   StyleSheet,
   View,
@@ -10,7 +11,14 @@ import {
 } from "react-native";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 
-function Login(props) {
+const Login = () => {
+
+  const navigation = useNavigation()
+
+  const handleCreateAccount = () => {
+        navigation.replace("SignUp")
+  }
+
   return (
     <View style={styles.root}>
       <StatusBar backgroundColor="#f8e11b" />
@@ -56,6 +64,7 @@ function Login(props) {
           <View style={styles.elarosColumnFiller}></View>
           <View style={styles.footerTexts}>
             <TouchableOpacity
+            onPress={handleCreateAccount}
               style={styles.button2}
             >
               <View style={styles.createAccountFiller}></View>

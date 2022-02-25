@@ -14,7 +14,7 @@ function Health(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(250,175,65,1)"
+    backgroundColor: "#fff"
   }
 });
 

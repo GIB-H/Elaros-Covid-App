@@ -19,10 +19,14 @@ const Stack = createStackNavigator();
 // creates the login stack so that users don't see the nav bar unless they are logged in
 function LoginStack() {
     return(
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                "headerShown": false,
+            }}
+        >
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Sign Up" component={SignUpScreen} />
-            <Stack.Screen name="Home" component={Tabs} />
+            <Stack.Screen name="Home Screen" component={Tabs} />
         </Stack.Navigator>
     );
 }
@@ -32,6 +36,7 @@ function GoalsStackScreen() {
     return(
         <Stack.Navigator
             screenOptions={{
+                "headerShown": false,
                 "headerTitleAlign": "center",
                 "headerStyle": [{
                     "backgroundColor": "#ea531a",
@@ -53,9 +58,10 @@ function HealthStackScreen() {
     return(
         <Stack.Navigator
             screenOptions={{
+                "headerShown": false,
                 "headerTitleAlign": "center",
                 "headerStyle": [{
-                    "backgroundColor": "#ea531a",
+                    "backgroundColor": "#fff",
                 }],
                 "headerTitleStyle": [{
                     "color": "#fff"
@@ -182,5 +188,5 @@ const styles = StyleSheet.create({
 
 // sends Tabs or LoginStack to App.js
 
-// export default LoginStack;
-export default Tabs;
+export default LoginStack;
+// export default Tabs;

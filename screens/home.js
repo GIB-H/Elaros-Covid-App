@@ -4,8 +4,7 @@ import { globalStyles } from "../styles/global";
 import Card from '../styles/card';
 import { CurrentRenderContext } from "@react-navigation/native";
 
-// required for stack navigation functionality
-export default function Home({ navigation }) {
+function Home(props) {
 
 
 //     // an example data set to show how it can be shown on various pages.

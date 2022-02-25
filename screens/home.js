@@ -3,19 +3,9 @@ import { StyleSheet, Button, View, Text, Alert, FlatList, TouchableOpacity } fro
 import { globalStyles } from "../styles/global";
 import Card from '../styles/card';
 import { CurrentRenderContext } from "@react-navigation/native";
+import { createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 function Home(props) {
-
-
-//     // an example data set to show how it can be shown on various pages.
-//     const [dummyData, setDummyData] = useState([
-//         { name: "John", airflow: 4, depression: "low", key: "1"},
-//         { name: "Anne", airflow: 3, depression: "medium", key: "2"},
-//         { name: "Damien", airflow: 1, depression: "low", key: "3"},
-//         { name: "Link", airflow: 9, depression: "high", key: "4"},
-
-// ]);
-
     return(
         <View style={globalStyles.container}>
             <text>Welcome John to your Elaros Covid App Homepage! </text>
@@ -38,8 +28,8 @@ function Home(props) {
                     <Text>Graphs</Text>
                 </TouchableOpacity>
             </Card>
-
-
         </View>
-    )
+    );
 }
+
+export default Home;

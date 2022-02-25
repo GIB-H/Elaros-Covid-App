@@ -21,6 +21,10 @@ const Login = () => {
 
   return (
     <View style={styles.root}>
+<ImageBackground
+  source={require('../assets/Gradient_KvZTDAL.png')}
+  style={{width: '100%', height: '100%'}}
+> 
       <StatusBar backgroundColor="#f8e11b" />
       <View gradientImage="Gradient_KvZTDAL.png" style={styles.background}>
           <View style={styles.elarosColumn}>
@@ -72,6 +76,7 @@ const Login = () => {
             </TouchableOpacity>
           </View>
       </View>
+      </ImageBackground> 
     </View>
   );
 }

@@ -1,3 +1,5 @@
+// card.js is the style for the goals cards.
+
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import {
   StyleSheet,
@@ -18,6 +18,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
 
   const navigation = useNavigation();
 
@@ -27,8 +28,15 @@ const Login = () => {
         console.log('user logged in: ', cred.user);
         navigation.push('Home Screen');
       })
-      .catch(err => console.log(err.message));
+      .catch(err => {
+        console.log(err.message);
+        setError(true);
+      });
   };
+
+  useEffect(() => {
+    setError(false);
+  }, [email, password]);
 
   const handleCreateAccount = () => {
     navigation.push('Sign Up');
@@ -78,6 +86,9 @@ const Login = () => {
               <TouchableOpacity style={styles.button} onPress={handleHomePage}>
                 <Text style={styles.text2}>Log in</Text>
               </TouchableOpacity>
+              {error && (
+                <Text style={styles.error}>Invalid Username or Password</Text>
+              )}
             </View>
           </View>
           <View style={styles.elarosColumnFiller}></View>
@@ -172,6 +183,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     opacity: 0.94,
     justifyContent: 'center',
+    marginTop: 20,
   },
   text2: {
     color: 'rgba(255,255,255,1)',
@@ -206,6 +218,12 @@ const styles = StyleSheet.create({
   button2Filler: {
     flex: 1,
     flexDirection: 'row',
+  },
+  // ERROR
+  error: {
+    marginTop: 10,
+    textAlign: 'center',
+    color: 'white',
   },
 });
 

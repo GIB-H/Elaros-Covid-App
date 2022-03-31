@@ -1,6 +1,6 @@
 // createGoals.js  is the page used to let users create goals in the application.
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -166,6 +166,11 @@ function AddLog({ route, navigation }) {
   // Input
   const [text, setText] = useState('');
   const [error, setError] = useState(false);
+
+  // Remove the error
+  useEffect(() => {
+    setError(false);
+  }, [symptomValue, ratingValue, text]);
 
   // Submit
   const handlePress = () => {

@@ -17,11 +17,13 @@ import {
   orderBy,
 } from 'firebase/firestore';
 import { colGoalsRef, colQuestRef, auth } from '../firebaseConfig';
+import { useEffect } from 'react/cjs/react.production.min';
 
 function CreateGoals({ route, navigation }) {
   const uId = auth.currentUser.uid;
 
   const { goals, setGoals } = route.params;
+  const [error, setError] = useState(false);
 
   // Retriving the progress
   const fetchProgress = async () => {
@@ -82,6 +84,8 @@ function CreateGoals({ route, navigation }) {
         // Go back to goals page
         navigation.goBack()
       );
+    } else {
+      setError(true);
     }
   };
 
@@ -198,6 +202,11 @@ function CreateGoals({ route, navigation }) {
     }
   };
 
+  // Remove the error
+  useEffect(() => {
+    setError(false);
+  }, [value, date]);
+
   const monthNames = [
     'January',
     'February',
@@ -265,6 +274,12 @@ function CreateGoals({ route, navigation }) {
           <Text style={styles.buttonText}>Sumbmit Goal</Text>
         </View>
       </TouchableOpacity>
+
+      {error && (
+        <Text style={styles.error}>
+          Please enter a symptom and a target date
+        </Text>
+      )}
 
       {showDate && (
         <DateTimePicker
@@ -346,6 +361,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     textAlign: 'center',
+  },
+
+  // ERROR
+  error: {
+    color: 'red',
   },
 });
 

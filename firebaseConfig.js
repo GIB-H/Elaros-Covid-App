@@ -23,3 +23,5 @@ export const auth = getAuth();
 
 // Collections
 export const colGoalsRef = collection(db, 'goals');
+export const colQuestRef = collection(db, 'questionnaires');
+export const colDiaryRef = collection(db, 'diary');

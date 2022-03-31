@@ -27,12 +27,21 @@ function Goals({ route, navigation }) {
     querySnapshot.forEach(doc => {
       newGoals.push(doc.data());
     });
+
     setGoals(newGoals);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  // Redirect to goal graph
+  const handlePress = title => {
+    // Pass in the title of that goal to the new page
+    navigation.navigate('Goal Graph', {
+      title: title,
+    });
+  };
 
   // Filter Goals
   useEffect(() => {
@@ -74,7 +83,11 @@ function Goals({ route, navigation }) {
         <FlatList
           data={filteredGoals}
           renderItem={({ item }) => (
-            <GoalInfo item={item} navigation={navigation} />
+            <GoalInfo
+              item={item}
+              navigation={navigation}
+              handlePress={handlePress}
+            />
           )}
           keyExtractor={item => item.title}
         />

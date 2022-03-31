@@ -8,7 +8,6 @@ import HomeScreen from '../screens/home';
 import GoalsScreen from '../screens/goals';
 import CreateGoalsScreen from '../screens/createGoals';
 import SettingsScreen from '../screens/settings';
-import HealthScreen from '../screens/health';
 import DiaryScreen from '../screens/diary';
 import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
@@ -61,8 +60,8 @@ function GoalsStackScreen() {
   );
 }
 
-// Creates the Health Screen Stack
-function HealthStackScreen() {
+// Creates the Diary Screen Stack
+function DiaryStackScreen() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -80,9 +79,7 @@ function HealthStackScreen() {
         ],
       }}
     >
-      <Stack.Screen name='Your Health' component={HealthScreen} />
       <Stack.Screen name='Diary' component={DiaryScreen} />
-      <Stack.Screen name='Questionnaires' component={QuestionScreen} />
     </Stack.Navigator>
   );
 }
@@ -139,7 +136,7 @@ const Tabs = () => {
       {/* health button */}
       <Tab.Screen
         name='Health'
-        component={HealthStackScreen}
+        component={DiaryStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View

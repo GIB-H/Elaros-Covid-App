@@ -6,7 +6,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MaterialIcons } from 'react-native-vector-icons';
 
-export const GoalInfo = ({ item }) => {
+export const GoalInfo = ({ item, handlePress }) => {
   return (
     <View style={styles.card}>
       <View style={styles.cardContent}>
@@ -33,7 +33,7 @@ export const GoalInfo = ({ item }) => {
         ></MaterialIcons>
       </View>
       <View style={styles.moreInfoIcon}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handlePress(item.title)}>
           <MaterialIcons
             name={'info'}
             color={'black'}

@@ -8,16 +8,38 @@ import { IconButton } from 'react-native-paper';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Database
-import { addDoc } from 'firebase/firestore';
-import { colGoalsRef, auth } from '../firebaseConfig';
+import {
+  addDoc,
+  getDocs,
+  query,
+  where,
+  limit,
+  orderBy,
+} from 'firebase/firestore';
+import { colGoalsRef, colQuestRef, auth } from '../firebaseConfig';
 
 function CreateGoals({ route, navigation }) {
   const uId = auth.currentUser.uid;
 
   const { goals, setGoals } = route.params;
 
+  // Retriving the progress
+  const fetchProgress = async () => {
+    console.log('fetching data for create goal');
+    const q = query(
+      colQuestRef,
+      where('userId', '==', uId),
+      orderBy('date', 'desc'),
+      limit(1)
+    );
+
+    const snapshot = await getDocs(q);
+
+    return snapshot;
+  };
+
   // Add a goal to the database
-  const submitHandler = () => {
+  const submitHandler = async () => {
     // Check that a date and a value for a symptom has been created
     if (date && value) {
       // Format the date into a readable form
@@ -31,14 +53,23 @@ function CreateGoals({ route, navigation }) {
       // Retrieve the icon from the given selected symptom
       const icon = defaultItems.find(item => item.value === value).iconValue;
 
+      const snapshot = fetchProgress();
+
+      let progress = 0;
+      (await snapshot).forEach(doc => {
+        progress = doc.data().data[value] * 10;
+        console.log(progress);
+      });
+
       // New Goal Object
       const newGoal = {
         title: value,
         targetDate: formattedDate,
         icon: icon,
-        progress: 0,
+        progress: progress, // corresponds to the latest questionaire score
         userId: uId,
       };
+      console.log('new goal', newGoal);
 
       // Update Goals
       const newGoals = [];

@@ -1,6 +1,5 @@
 // goal-info.js  page is in the components folder as this is being reusued in the goals screen
 
-import React, { useState } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { TouchableOpacity } from 'react-native-gesture-handler';

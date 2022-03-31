@@ -13,6 +13,7 @@ import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
 import QuestionScreen from '../screens/questionnaire';
 import GoalGraphScreen from '../screens/goalGraph';
+import AddLogScreen from '../screens/addLog';
 
 const Stack = createStackNavigator();
 
@@ -80,6 +81,7 @@ function DiaryStackScreen() {
       }}
     >
       <Stack.Screen name='Diary' component={DiaryScreen} />
+      <Stack.Screen name='Add Log' component={AddLogScreen} />
     </Stack.Navigator>
   );
 }

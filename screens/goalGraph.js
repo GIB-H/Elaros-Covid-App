@@ -17,8 +17,9 @@ function GoalGraph({ route, navigation }) {
   const scoreTitle = route.params.title;
   const [isFinished, setIsFinished] = useState(0);
   const [data, setData] = useState([
-    { id: 0, score: 0, label: 'l1', date: 0, isUsed: true },
-    { id: 0, score: 1, label: 'l2', date: 0, isUsed: true },
+    { id: 0, score: 0, label: 'Pre Covid', date: 0, isUsed: true },
+    { id: 1, score: 10, label: '28 Feb', date: 0, isUsed: true },
+    { id: 2, score: 7, label: '10 Mar', date: 0, isUsed: true },
   ]); // Default values must be used
 
   const handlePress = (id, isUsed, label) => {

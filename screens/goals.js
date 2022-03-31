@@ -45,12 +45,15 @@ function Goals({ route, navigation }) {
 
   // Filter Goals
   useEffect(() => {
-    const newFilteredGoals = goals.filter(goal => {
-      return goal.title.toLowerCase().includes(search);
-    });
+    let newFilteredGoals = [];
+    if (goals.length > 0) {
+      newFilteredGoals = goals.filter(goal => {
+        return goal.title.toLowerCase().includes(search);
+      });
 
-    // Sort list alphabeticaly
-    newFilteredGoals.sort((a, b) => (a.title > b.title ? 1 : 1));
+      // Sort list alphabeticaly
+      newFilteredGoals.sort((a, b) => (a.title > b.title ? 1 : 1));
+    }
 
     setFilteredGoals(newFilteredGoals);
   }, [goals, search]);
@@ -72,26 +75,37 @@ function Goals({ route, navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
-        <Searchbar
-          placeholder='Find Goal...'
-          onChangeText={handleSearch}
-          value={search}
-        />
+        {goals.length > 0 && (
+          <Searchbar
+            placeholder='Find Goal...'
+            onChangeText={handleSearch}
+            value={search}
+          />
+        )}
       </View>
 
-      <View style={styles.goals}>
-        <FlatList
-          data={filteredGoals}
-          renderItem={({ item }) => (
-            <GoalInfo
-              item={item}
-              navigation={navigation}
-              handlePress={handlePress}
+      {goals.length === 0 && (
+        <View style={styles.noGoals}>
+          <Text style={styles.noGoalsText}>
+            You have no goals. Click the button below to add your first goal
+          </Text>
+        </View>
+      )}
+
+      {goals.length > 0 &&
+        (console.log('executing', goals),
+        (
+          <View style={styles.goals}>
+            <FlatList
+              data={filteredGoals}
+              renderItem={({ item }) => (
+                <GoalInfo item={item} handlePress={handlePress} />
+              )}
+              keyExtractor={item => item.title}
             />
-          )}
-          keyExtractor={item => item.title}
-        />
-      </View>
+          </View>
+        ))}
+      {}
 
       {/* Button (WILL BE A COMPONENT SOON) */}
       <TouchableOpacity onPress={onPressHandler}>
@@ -107,10 +121,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  headerWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   searchContainer: {
     padding: 16,
@@ -131,6 +141,17 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: 'bold',
     fontSize: 16,
+    textAlign: 'center',
+  },
+  noGoals: {
+    alignItems: 'center',
+    marginBottom: 450,
+    marginHorizontal: 10,
+  },
+  noGoalsText: {
+    fontSize: 15,
+    color: 'red',
+    fontWeight: 'bold',
     textAlign: 'center',
   },
 });

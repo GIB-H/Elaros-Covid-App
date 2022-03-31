@@ -262,7 +262,7 @@ function CreateGoals({ route, navigation }) {
       {/* Button */}
       <TouchableOpacity onPress={submitHandler}>
         <View style={styles.button}>
-          <Text style={styles.buttonText}>Sumbmit</Text>
+          <Text style={styles.buttonText}>Sumbmit Goal</Text>
         </View>
       </TouchableOpacity>
 

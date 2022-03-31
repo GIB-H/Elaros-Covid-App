@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 // Database
-import { getDocs, query, where } from 'firebase/firestore';
+import { getDocs, query, where, orderBy } from 'firebase/firestore';
 import { colDiaryRef, auth } from '../firebaseConfig';
 
 function Diary({ route, navigation }) {
@@ -11,16 +11,21 @@ function Diary({ route, navigation }) {
 
   // Fetch Goals from Database
   const fetchData = async () => {
-    const q = query(colDiaryRef, where('userId', '==', uId));
+    const q = query(
+      colDiaryRef,
+      where('userId', '==', uId),
+      orderBy('date', 'asc')
+    );
 
     const querySnapshot = await getDocs(q);
 
     const newLogs = [];
     querySnapshot.forEach(doc => {
-      newLogs.push(doc.data());
+      const docObj = doc.data();
+      const dateObj = docObj.date.toDate();
     });
 
-    console.log(newLogs);
+    console.log('diary logs', newLogs);
   };
 
   useEffect(() => {

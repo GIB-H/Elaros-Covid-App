@@ -12,8 +12,14 @@ import { globalStyles } from '../styles/global';
 import Card from '../styles/card';
 import { CurrentRenderContext } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/core';
 
-function Home(props) {
+const Home = () => {
+  const navigation = useNavigation();
+  const handleQuestionaire = () => {
+    navigation.push('PersonalInfo');
+  };
+  
   return (
     <View style={globalStyles.container}>
       <Text>Welcome John to your Elaros Covid App Homepage! </Text>
@@ -33,6 +39,7 @@ function Home(props) {
             marginTop: 10,
             backgroundColor: 'orange',
           }}
+          onPress={handleQuestionaire}
         >
           <Text>Questionaire</Text>
         </TouchableOpacity>

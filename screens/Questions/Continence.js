@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 44,
     width: 300
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     top: 55,
     left: 40,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   loremIpsumStackStack: {
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   bladder: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   neither: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 22,
     width: 224
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     top: 33,
     left: 40,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   loremIpsum2StackStack: {
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 39,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio5Stack: {
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   neither2: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 12
   },

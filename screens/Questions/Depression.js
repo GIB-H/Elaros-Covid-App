@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   loremIpsum: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     width: 297,
     height: 34,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     top: 11,
     left: 35,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadioStack: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     top: 11,
     left: 35,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio2Stack: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginLeft: 31
   },
   loremIpsum2: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 52,
     width: 267,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 35,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio3Stack: {
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 35,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio4Stack: {

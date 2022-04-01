@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   
   },
   loremIpsum: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 53,
     width: 292,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   cough: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 18,
     width: 46,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   voiceChange: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   noisyBreathing: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   noneOfTheAbove: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     marginRight: 170
   },
   loremIpsum2: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 7,
     marginLeft: 84
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 38,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio5Stack: {
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 38,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio6Stack: {
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 38,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio7Stack: {
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     top: 12,
     left: 38,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio9Stack: {

@@ -93,7 +93,7 @@ container: {
   flex: 1
 },
 loremIpsum: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   width: 323,
   height: 22,
@@ -105,7 +105,7 @@ cupertinoRadio: {
   height: 40
 },
 chestPain: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -120,7 +120,7 @@ cupertinoRadio2: {
   height: 40
 },
 jointPain: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -135,7 +135,7 @@ cupertinoRadio3: {
   height: 40
 },
 musclePain: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -150,7 +150,7 @@ cupertinoRadio4: {
   height: 40
 },
 headAche: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -165,7 +165,7 @@ cupertinoRadio5: {
   height: 40
 },
 abdominalPain: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -180,7 +180,7 @@ cupertinoRadio6: {
   height: 40
 },
 otherPain: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -195,7 +195,7 @@ cupertinoRadio7: {
   height: 40
 },
 none: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 12
 },
@@ -206,7 +206,7 @@ cupertinoRadio7Row: {
   marginRight: 271
 },
 loremIpsum3: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   height: 19,
   width: 145,
@@ -217,7 +217,7 @@ cupertinoRadio8: {
   height: 40
 },
 chestPain1: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 11
 },
@@ -239,7 +239,7 @@ jointPain1: {
   top: 11,
   left: 39,
   position: "absolute",
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212"
 },
 cupertinoRadio9Stack: {
@@ -258,7 +258,7 @@ musclePain1: {
   top: 11,
   left: 39,
   position: "absolute",
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212"
 },
 cupertinoRadio10Stack: {
@@ -277,7 +277,7 @@ headAche1: {
   top: 11,
   left: 39,
   position: "absolute",
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212"
 },
 cupertinoRadio11Stack: {
@@ -308,7 +308,7 @@ abdominalPain1: {
   top: 11,
   left: 39,
   position: "absolute",
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212"
 },
 cupertinoRadio12Stack: {
@@ -327,7 +327,7 @@ otherPain1: {
   top: 10,
   left: 39,
   position: "absolute",
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212"
 },
 cupertinoRadio14Stack: {
@@ -341,7 +341,7 @@ cupertinoRadio15: {
   height: 40
 },
 none1: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 10
 },

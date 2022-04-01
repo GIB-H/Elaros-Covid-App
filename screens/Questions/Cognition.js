@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 39,
     width: 262
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     top: 50,
     left: 40,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   loremIpsumStackStack: {
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   planning: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 12
   },
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   shortTermMemory: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 12
   },
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   neither: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 12
   },
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     marginRight: 251
   },
   loremIpsum2: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 19,
     width: 231,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     top: 16,
     left: 35,
     position: "absolute",
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212"
   },
   cupertinoRadio5Stack: {
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   consentration1: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   shortTermMemory1: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   planning1: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   neither1: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     marginTop: 11
   },

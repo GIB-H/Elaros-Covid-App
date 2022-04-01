@@ -31,7 +31,7 @@ container: {
   flex: 1
 },
 loremIpsum: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   height: 40,
   width: 323,
@@ -43,7 +43,7 @@ cupertinoRadio: {
   height: 40
 },
 yes: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 11
 },
@@ -59,7 +59,7 @@ cupertinoRadio2: {
   height: 40
 },
 no3: {
-  fontFamily: "roboto-regular",
+  fontFamily: "",
   color: "#121212",
   marginTop: 11
 },

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   loremIpsum: {
-    fontFamily: "roboto-regular",
+    fontFamily: "",
     color: "#121212",
     height: 100,
     width: 266,

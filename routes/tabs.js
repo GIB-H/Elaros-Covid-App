@@ -11,9 +11,16 @@ import SettingsScreen from '../screens/settings';
 import DiaryScreen from '../screens/diary';
 import LoginScreen from '../screens/login';
 import SignUpScreen from '../screens/signUp';
-import QuestionScreen from '../screens/questionnaire';
+import QuestionScreen from '../screens/Questions/PersonalInfo';
 import GoalGraphScreen from '../screens/goalGraph';
-import AddLogScreen from '../screens/addLog';
+import Breathlessness from '../screens/Questions/Breathlessness';
+import Cough from '../screens/Questions/Cough';
+import Cognition from '../screens/Questions/Cognition';
+import Pain from '../screens/Questions/Pain';
+import Swallowing from '../screens/Questions/Swallowing';
+import Fatigue from '../screens/Questions/Fatigue';
+import Continence from '../screens/Questions/Continence';
+import Anxiety from '../screens/Questions/Anxiety';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +35,28 @@ function LoginStack() {
       <Stack.Screen name='Login' component={LoginScreen} />
       <Stack.Screen name='Sign Up' component={SignUpScreen} />
       <Stack.Screen name='Home Screen' component={Tabs} />
+      <Stack.Screen name='PersonalInfo' component={QuestionScreen} />
+      <Stack.Screen name='Breathlessness' component={Breathlessness} />
+      <Stack.Screen name='Cough' component={Cough} />
+      <Stack.Screen name='Swallowing' component={Swallowing} />
+      <Stack.Screen name='Fatigue' component={Fatigue} />
+      <Stack.Screen name='Continence' component={Continence} />
+      <Stack.Screen name='Pain' component={Pain} />
+      <Stack.Screen name='Cognition' component={Cognition} />
+      <Stack.Screen name='Anxiety' component={Anxiety} />
+
+    </Stack.Navigator>
+  );
+}
+
+// creates the questionnaire stack
+function QuestionaireStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
     </Stack.Navigator>
   );
 }
@@ -61,6 +90,8 @@ function GoalsStackScreen() {
   );
 }
 
+
+
 // Creates the Diary Screen Stack
 function DiaryStackScreen() {
   return (
@@ -81,7 +112,6 @@ function DiaryStackScreen() {
       }}
     >
       <Stack.Screen name='Diary' component={DiaryScreen} />
-      <Stack.Screen name='Add Log' component={AddLogScreen} />
     </Stack.Navigator>
   );
 }

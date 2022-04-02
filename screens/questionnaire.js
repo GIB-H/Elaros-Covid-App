@@ -1,5 +1,4 @@
 // questionnaire.js is the page users use to take the health questionnaires.
-
 import { StyleSheet, View, Text, Image } from 'react-native';
 
 function Questionnaire(props) {

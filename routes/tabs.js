@@ -85,6 +85,57 @@ function DiaryStackScreen() {
     </Stack.Navigator>
   );
 }
+// Creates the Diary Screen Stack
+function HomeStackScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        headerTitleAlign: 'center',
+        headerStyle: [
+          {
+            backgroundColor: '#fff',
+          },
+        ],
+        headerTitleStyle: [
+          {
+            color: '#fff',
+          },
+        ],
+      }}
+    >
+      <Stack.Screen name='Home Screen' component={HomeScreen} />
+      <Stack.Screen name='Question' component={QuestionScreen} />
+      <Stack.Screen name='Diary' component={DiaryScreen} />
+      <Stack.Screen name='Your Goals' component={GoalsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+// Creates the Settings Stack
+function SettingsStackScreen() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        headerTitleAlign: 'center',
+        headerStyle: [
+          {
+            backgroundColor: '#fff',
+          },
+        ],
+        headerTitleStyle: [
+          {
+            color: '#fff',
+          },
+        ],
+      }}
+    >
+      <Stack.Screen name='Settings' component={SettingsScreen} />
+      <Stack.Screen name='Login' component={LoginScreen} />
+    </Stack.Navigator>
+  );
+}
 
 // Creates the tab bar
 const Tab = createBottomTabNavigator();
@@ -115,7 +166,7 @@ const Tabs = () => {
       {/* home button */}
       <Tab.Screen
         name='Home'
-        component={HomeScreen}
+        component={HomeStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View
@@ -185,7 +236,7 @@ const Tabs = () => {
       {/* settings button */}
       <Tab.Screen
         name='Settings'
-        component={SettingsScreen}
+        component={SettingsStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View

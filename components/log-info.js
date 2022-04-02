@@ -5,10 +5,6 @@ import { Text, StyleSheet, View, Modal, Pressable } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MaterialIcons } from 'react-native-vector-icons';
 
-// Database
-import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
-
 export const LogInfo = ({ item, handleDelete }) => {
   const color = item.color;
   const logo = item.logo;

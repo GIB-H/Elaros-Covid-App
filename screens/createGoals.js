@@ -1,5 +1,6 @@
 // createGoals.js  is the page used to let users create goals in the application.
-import React, { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -17,13 +18,28 @@ import {
   orderBy,
 } from 'firebase/firestore';
 import { colGoalsRef, colQuestRef, auth } from '../firebaseConfig';
-import { useEffect } from 'react/cjs/react.production.min';
 
 function CreateGoals({ route, navigation }) {
   const uId = auth.currentUser.uid;
 
   const { goals, setGoals } = route.params;
   const [error, setError] = useState(false);
+
+  // Dates
+  const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
 
   // Retriving the progress
   const fetchProgress = async () => {
@@ -43,7 +59,7 @@ function CreateGoals({ route, navigation }) {
   // Add a goal to the database
   const submitHandler = async () => {
     // Check that a date and a value for a symptom has been created
-    if (date && value) {
+    if (date && userSetDate) {
       // Format the date into a readable form
       const formattedDate =
         date.getDate() +
@@ -184,6 +200,7 @@ function CreateGoals({ route, navigation }) {
     });
   });
 
+  // List
   const [value, setValue] = useState(null);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState(filteredGoals);
@@ -193,6 +210,7 @@ function CreateGoals({ route, navigation }) {
   const [date, setDate] = useState(new Date());
   const [userSetDate, setUserSetDate] = useState(false); // user has not set a date yet
 
+  // Show Date Picker
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShowDate(Platform.OS === 'ios');
@@ -207,21 +225,6 @@ function CreateGoals({ route, navigation }) {
     setError(false);
   }, [value, date]);
 
-  const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
   return (
     <View style={styles.container}>
       <View style={styles.plus}>
@@ -232,7 +235,6 @@ function CreateGoals({ route, navigation }) {
       <Text style={styles.message}>
         Goals are a great way to track your recovery process
       </Text>
-
       <View style={styles.dropDownContainer}>
         <DropDownPicker
           maxHeight={155}
@@ -246,7 +248,6 @@ function CreateGoals({ route, navigation }) {
           showArrowIcon={true}
         ></DropDownPicker>
       </View>
-
       <View style={styles.dateContainer}>
         <Text>
           Target Date
@@ -267,7 +268,6 @@ function CreateGoals({ route, navigation }) {
         />
         <View style={styles.dateLine}></View>
       </View>
-
       {/* Button */}
       <TouchableOpacity onPress={submitHandler}>
         <View style={styles.button}>
@@ -280,7 +280,6 @@ function CreateGoals({ route, navigation }) {
           Please enter a symptom and a target date
         </Text>
       )}
-
       {showDate && (
         <DateTimePicker
           testID='dateTimePicker'

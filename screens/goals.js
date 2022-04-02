@@ -65,10 +65,10 @@ function Goals({ route, navigation }) {
 
   // Update Screen
   const onPressHandler = () => {
+    console.log('pressed');
     navigation.navigate('Create Goals', {
       goals: goals,
       setGoals: setGoals,
-      uid: uId,
     });
   };
 

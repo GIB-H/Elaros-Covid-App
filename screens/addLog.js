@@ -1,4 +1,5 @@
-// createGoals.js  is the page used to let users create goals in the application.
+// addLog.js is the page used to let users create logs in the application.
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { MaterialIcons } from 'react-native-vector-icons';
@@ -191,6 +192,7 @@ function AddLog({ route, navigation }) {
       // Add the new Goal to the database
       addDoc(colDiaryRef, newLog);
 
+      // Fomrat the date
       newLog.date =
         newLog.date.getDate() +
         ' ' +

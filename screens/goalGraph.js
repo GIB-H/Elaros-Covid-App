@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 
 // Database
-import { getDocs, orderBy, query, where, limit } from 'firebase/firestore';
+import { getDocs, orderBy, query, where } from 'firebase/firestore';
 import { colQuestRef, auth } from '../firebaseConfig';
 
 // Graphs
@@ -22,6 +22,7 @@ function GoalGraph({ route, navigation }) {
     { id: 2, score: 7, label: '10 Mar', date: 0, isUsed: true },
   ]); // Default values must be used
 
+  // Edit the graph
   const handlePress = (id, isUsed, label) => {
     let changeTo = true;
     if (isUsed) {
@@ -35,6 +36,7 @@ function GoalGraph({ route, navigation }) {
     console.log('new data', data);
   };
 
+  // Retrieve the symptom scores and dates from questionnaire
   const fetchData = async () => {
     const q = query(
       colQuestRef,
@@ -69,6 +71,7 @@ function GoalGraph({ route, navigation }) {
       const dateObj = doc.data().date.toDate();
       const date = dateObj.getDate() + ' ' + months[dateObj.getMonth()];
 
+      // Add to the list
       dataObjects.push({
         score: score,
         label: date,

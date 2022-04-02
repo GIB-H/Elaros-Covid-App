@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import {
   StyleSheet,
@@ -18,15 +18,35 @@ import { auth } from '../firebaseConfig';
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailExistsError, setEmailExistsError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [emailInvalidError, setEmailInvalidError] = useState(false);
 
   const navigation = useNavigation();
 
+  // Hide errors once user re-types
+  useEffect(() => {
+    setPasswordError(false);
+    setEmailExistsError(false);
+    setEmailInvalidError(false);
+  }, [email, password]);
+
+  // Create User
   const handleCreateAccount = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(cred => {
         console.log('user created: ', cred.user);
       })
-      .catch(err => console.log(err.message));
+      .catch(err => {
+        console.log(err);
+        if (err.code === 'auth/email-already-in-use') {
+          setEmailExistsError(true);
+        } else if (err.code === 'auth/invalid-email') {
+          setEmailInvalidError(true);
+        } else if (err.code === 'auth/weak-password') {
+          setPasswordError(true);
+        }
+      });
   };
 
   return (
@@ -77,6 +97,15 @@ const SignUp = () => {
             >
               <Text style={styles.text2}>Sign Up</Text>
             </TouchableOpacity>
+            {passwordError && (
+              <Text style={styles.error}>Password is too weak</Text>
+            )}
+            {emailExistsError && (
+              <Text style={styles.error}>This email already exists</Text>
+            )}
+            {emailInvalidError && (
+              <Text style={styles.error}>This email is invalid</Text>
+            )}
             <Text style={styles.text4}>Terms &amp; Conditions</Text>
           </View>
         </View>
@@ -190,11 +219,16 @@ const styles = StyleSheet.create({
   text4: {
     color: 'rgba(0,0,0,1)',
     alignSelf: 'center',
+    marginTop: 10,
   },
   buttonColumn: {
     marginBottom: 31,
     marginLeft: 41,
     marginRight: 41,
+  },
+  error: {
+    color: 'red',
+    textAlign: 'center',
   },
 });
 

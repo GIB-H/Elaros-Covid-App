@@ -18,10 +18,11 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
+  const [notFoundError, setNotFoundError] = useState(false);
 
   const navigation = useNavigation();
 
+  // Log the user in
   const handleHomePage = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(cred => {
@@ -29,13 +30,14 @@ const Login = () => {
         navigation.push('Home Screen');
       })
       .catch(err => {
-        console.log(err.message);
-        setError(true);
+        // Invalid password/email
+        setNotFoundError(true);
       });
   };
 
+  // Remove the error message
   useEffect(() => {
-    setError(false);
+    setNotFoundError(false);
   }, [email, password]);
 
   const handleCreateAccount = () => {
@@ -86,7 +88,7 @@ const Login = () => {
               <TouchableOpacity style={styles.button} onPress={handleHomePage}>
                 <Text style={styles.text2}>Log in</Text>
               </TouchableOpacity>
-              {error && (
+              {notFoundError && (
                 <Text style={styles.error}>Invalid Username or Password</Text>
               )}
             </View>
@@ -97,7 +99,6 @@ const Login = () => {
               onPress={handleCreateAccount}
               style={styles.button2}
             >
-              <View style={styles.createAccountFiller}></View>
               <Text style={styles.createAccount}>Create Account</Text>
             </TouchableOpacity>
           </View>
@@ -205,15 +206,12 @@ const styles = StyleSheet.create({
     marginRight: 36,
   },
   button2: {
-    width: 104,
-    height: 14,
-    alignSelf: 'flex-end',
-  },
-  createAccountFiller: {
-    flex: 1,
+    width: '100%',
+    height: 90,
   },
   createAccount: {
     color: 'rgba(0,0,0,1)',
+    textAlign: 'center',
   },
   button2Filler: {
     flex: 1,

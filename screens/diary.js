@@ -63,6 +63,7 @@ function Diary({ route, navigation }) {
       const docObj = doc.data();
       const dateObj = docObj.date.toDate();
 
+      // Set the rating logo and the color from the rating
       let logo;
       let color;
       let data = [];
@@ -77,10 +78,12 @@ function Diary({ route, navigation }) {
         color = '#6ecc94';
       }
 
+      // Add the optional data input field
       if (docObj.data) {
         data = docObj.data;
       }
 
+      // Add the log
       newLogs.push({
         date:
           weekDays[dateObj.getDay()] +

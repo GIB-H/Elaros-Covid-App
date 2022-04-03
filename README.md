@@ -61,11 +61,11 @@ Note: You may wish to run the mobile application locally on your machine, to do 
 
 ## Project Status
 
-Project is: _in progress_
+Project is: _completed_
 
 ## Acknowledgements
 
-- This project was conceived by individuals at Elaros in association with Sheffield Hallam University
+- This project was conceived by individuals at Elaros in association with Sheffield Hallam University.
 - Developed by George I B Hulbert, Isaac Bowyer, Dominik Backhouse and Richard William Atkinson.
 
 ## Contact

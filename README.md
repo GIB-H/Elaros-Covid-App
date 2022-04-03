@@ -8,7 +8,7 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Screenshots](#screenshots)
-- [Setup](#setup)
+- [Installation](#installation)
 - [Project Status](#project-status)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
@@ -40,7 +40,7 @@ The Elaros Long-Covid app has three main feature, each of which is detailed belo
 ![Screenshot_2022-04-02-17-27-36-20_f73b71075b1de7323614b647fe394240](https://user-images.githubusercontent.com/72026233/161430821-62686aeb-ba9c-445f-a5e7-a3304a9c3e0a.jpg)
 ![Screenshot_2022-04-02-17-31-50-93_f73b71075b1de7323614b647fe394240](https://user-images.githubusercontent.com/72026233/161430828-6cad5c87-a9bd-42b0-ad2d-8ef74ed0fe3b.jpg)
 
-## Setup
+## Installation
 
 To set up the enviroment for this project, first install Node.js (v16.13.2). Then, to install the required dependancies locally using `npm` run the following command:
 
@@ -54,6 +54,8 @@ Then, you can run the expo client using:
 ```bash
 $ npm start
 ```
+
+You may wish to run the mobile application locally on your machine, to do this Android Studio emulation of any android device will allow the app to be run. To do this install Android Studio and create a virtual phone. Then, after running the expo client (whilst the android emulator is running), pressing "a" into the terminal will port the application into the emulator and allow it to be run.
 
 ## Project Status
 

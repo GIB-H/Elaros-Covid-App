@@ -26,8 +26,11 @@
 - Android Studio 2021.1.1.21 (optional, for Android Emulation)
 
 ## Features
+The Elaros Long-Covid app has three main feature, each of which is detailed below:
 
-Most features are still in development.
+- Goal Tracker; this allows users to set, edit and update their symptom recovery goals such as their breathing in a simple and intuitive way.
+- Symptom Graphs; this allows users to see their symptoms and how they have improved or regressed over a period of time, visualised in a simple graphical form.
+- Daily Logs; this allows users to update a personal diary day by day which further promotes the idea of self-help and regulation.
 
 ## Screenshots
 

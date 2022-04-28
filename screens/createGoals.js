@@ -289,6 +289,7 @@ function CreateGoals({ route, navigation }) {
           display='default'
           onChange={onChange}
           minimumDate={new Date()}
+          z
         />
       )}
     </View>

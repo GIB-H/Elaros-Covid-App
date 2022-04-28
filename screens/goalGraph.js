@@ -8,13 +8,14 @@ import { getDocs, orderBy, query, where } from 'firebase/firestore';
 import { colQuestRef, auth } from '../firebaseConfig';
 
 // Graphs
-import { LineChart } from 'react-native-chart-kit';
+import { LineChart, BarChart } from 'react-native-chart-kit';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 function GoalGraph({ route, navigation }) {
   const MAX_DATA = 4;
   const uId = auth.currentUser.uid;
   const scoreTitle = route.params.title;
+  const [isLineGraph, setIsLineGraph] = useState(true);
   const [isFinished, setIsFinished] = useState(0);
   const [data, setData] = useState([
     { id: 0, score: 0, label: 'Pre Covid', date: 0, isUsed: true },
@@ -34,6 +35,13 @@ function GoalGraph({ route, navigation }) {
     setIsFinished(isFinished + 1); // must be here otherwise the graph will not rerender
 
     console.log('new data', data);
+  };
+  const handleGraph = graph => {
+    if (graph === 'Line') {
+      setIsLineGraph(true);
+    } else {
+      setIsLineGraph(false);
+    }
   };
 
   // Retrieve the symptom scores and dates from questionnaire
@@ -103,40 +111,74 @@ function GoalGraph({ route, navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{scoreTitle}</Text>
-      <LineChart
-        data={{
-          labels: data
-            .filter(data => data.isUsed)
-            .map(data => {
-              console.log('linechart:', data.label);
-              return data.label;
-            }),
-          datasets: [
-            {
-              data: data.filter(data => data.isUsed).map(data => data.score),
+      {isLineGraph && (
+        <LineChart
+          data={{
+            labels: data
+              .filter(data => data.isUsed)
+              .map(data => {
+                return data.label;
+              }),
+            datasets: [
+              {
+                data: data.filter(data => data.isUsed).map(data => data.score),
+              },
+            ],
+          }}
+          width={Dimensions.get('window').width * 0.9} // from react-native
+          height={220}
+          chartConfig={{
+            backgroundGradientFrom: '#fb8c00',
+            backgroundGradientTo: '#ffa726',
+            decimalPlaces: 0,
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            propsForDots: {
+              r: '6',
+              strokeWidth: '2',
+              stroke: '#ffa726',
             },
-          ],
-        }}
-        width={Dimensions.get('window').width * 0.9} // from react-native
-        height={220}
-        chartConfig={{
-          backgroundGradientFrom: '#fb8c00',
-          backgroundGradientTo: '#ffa726',
-          decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-          propsForDots: {
-            r: '6',
-            strokeWidth: '2',
-            stroke: '#ffa726',
-          },
-        }}
-        bezier
-        style={{
-          marginVertical: 8,
-          borderRadius: 16,
-        }}
-      />
+          }}
+          bezier
+          fromZero={true}
+          style={{
+            marginVertical: 8,
+            borderRadius: 16,
+          }}
+        />
+      )}
+      {!isLineGraph && (
+        <BarChart
+          data={{
+            labels: data
+              .filter(data => data.isUsed)
+              .map(data => {
+                return data.label;
+              }),
+            datasets: [
+              {
+                data: data.filter(data => data.isUsed).map(data => data.score),
+              },
+            ],
+          }}
+          width={Dimensions.get('window').width * 0.9} // from react-native
+          height={220}
+          chartConfig={{
+            backgroundGradientFrom: '#fb8c00',
+            backgroundGradientTo: '#ffa726',
+            decimalPlaces: 0,
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+            barPercentage: 0.8,
+            barRadius: 5,
+          }}
+          fromZero={true}
+          style={{
+            marginVertical: 8,
+            borderRadius: 16,
+          }}
+        />
+      )}
 
       <Text style={styles.header}>Questionaire Dates:</Text>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', width: '80%' }}>
@@ -150,6 +192,19 @@ function GoalGraph({ route, navigation }) {
             </Text>
           </TouchableOpacity>
         ))}
+      </View>
+      <Text style={styles.header}>Graph Styles:</Text>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', width: '80%' }}>
+        <TouchableOpacity onPress={() => handleGraph('Line')}>
+          <Text style={isLineGraph ? styles.isUsed : styles.notUsed}>
+            Line Graph
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => handleGraph('Bar')}>
+          <Text style={isLineGraph ? styles.notUsed : styles.isUsed}>
+            Bar Chart
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

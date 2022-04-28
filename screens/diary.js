@@ -47,22 +47,19 @@ function Diary({ route, navigation }) {
     'December',
   ];
 
-  // Fetch Goals from Database
+  // Fetch Logs from Database
   const fetchData = async () => {
     const q = query(
       colDiaryRef,
       where('userId', '==', uId),
       orderBy('date', 'desc')
     );
-
     const querySnapshot = await getDocs(q);
-
     const newLogs = [];
     querySnapshot.forEach(doc => {
       console.log('item', doc.data());
       const docObj = doc.data();
       const dateObj = docObj.date.toDate();
-
       // Set the rating logo and the color from the rating
       let logo;
       let color;
@@ -77,12 +74,10 @@ function Diary({ route, navigation }) {
         logo = 'sentiment-very-satisfied';
         color = '#6ecc94';
       }
-
       // Add the optional data input field
       if (docObj.data) {
         data = docObj.data;
       }
-
       // Add the log
       newLogs.push({
         date:
@@ -99,7 +94,6 @@ function Diary({ route, navigation }) {
         data: data,
       });
     });
-
     console.log('diary logs', newLogs);
     setLogs(newLogs);
   };
@@ -137,7 +131,7 @@ function Diary({ route, navigation }) {
       months[date.getMonth()];
 
     // User can only input in one log per day
-    if (nameOfDate === logs[0].date) {
+    if (logs.length > 0 && nameOfDate === logs[0].date) {
       setError(true);
     } else {
       navigation.navigate('Add Log', {
